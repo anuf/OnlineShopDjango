@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+
+<p>You are looking for <strong>{{query}}</strong></p>
+{% if  articles %}
+    <p>Articles found: {{articles|length}} articles</p>
+    <ul>
+        {% for article in articles %}
+            <li>{{article.name}}: &nbsp; Price: &nbsp;{{article.price}}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles found!</p>
+{% endif %}
+</body>
+</html>
